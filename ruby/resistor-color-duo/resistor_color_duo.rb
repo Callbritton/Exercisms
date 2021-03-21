@@ -6,3 +6,23 @@ To get started with TDD, see the `README.md` file in your
 `ruby/resistor-color-duo` directory.
 =end
 
+class ResistorColorDuo
+  COLOR_VALUE = {
+    'brown' => 1,
+    'black' => 0,
+    'red' => 2,
+    'orange' => 3,
+    'yellow' => 4,
+    'green' => 5,
+    'blue' => 6,
+    'violet' => 7,
+    'grey' => 8,
+    'white' => 9
+  }
+
+  def self.value(colors)
+    colors.slice(0, 2).map do |color|
+      COLOR_VALUE[color]
+    end.join('').to_i
+  end
+end
